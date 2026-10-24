@@ -1,0 +1,6 @@
+github.com/Nareleth/kyanbasu v0.0.0-20261022014720-96bd9254fb56 h1:LnbayuUKKBqlBR3sKq2sAOVoxAPr1SseQXWwfm++0eU=
+github.com/Nareleth/kyanbasu v0.0.0-20261022014720-96bd9254fb56/go.mod h1:XYDKQcvJw5tsbQuqm7y356ktqEo1WR2Ajdmd6huEBbM=
+golang.org/x/sys v0.48.0 h1:bbX/i/6MgT9BVLM9RT1thmxL04yeTAhbEz4SyadbXoo=
+golang.org/x/sys v0.48.0/go.mod h1:hNLxWAXmnKAxqDtdwIYC4bM9oQPEecfsnNMuSxOs3og=
+golang.org/x/term v0.46.0 h1:3+OXuTbaKDgwk8jTi3aSLHRlmWqHEUDUtxnbFigO4YE=
+golang.org/x/term v0.46.0/go.mod h1:+K02xbkittuwc0Am4abfA3Fc+XRGXkvBXNO88NCXPoc=

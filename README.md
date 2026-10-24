@@ -15,9 +15,6 @@ Phase 1:
 ### Components:
 - Playable?
 
-### Game:
-- gameloop
-
 ### System:
 - Movement
 

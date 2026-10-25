@@ -6,8 +6,9 @@ Phase 2: visualization
 ### kyanbasu:
 - draw border
 
-### Render:
-- Player sprite
+### Camera:
+- create it
+- it follows the player centered
 
 ------
 Phase 3: Polish
@@ -20,6 +21,11 @@ Phase 3: Polish
 ### GameState:
 -  new gamestate
 - character control state (for input)
+
+### Movement:
+- fix the movement system
+- add gamestate control to the input
+
 
 ------
 Phase 4: Gameplay

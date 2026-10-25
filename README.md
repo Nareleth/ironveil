@@ -7,6 +7,7 @@ Phase 2: visualization
 - draw border
 
 ### Camera:
+- map grid separate from rendering grid
 - create it
 - it follows the player centered
 
@@ -14,6 +15,7 @@ Phase 2: visualization
 Phase 3: Polish
 ### World:
 - Stores all entities, components, and systems
+- Rewrite rendering for world
 
 ### Components:
 - Playable?
@@ -34,8 +36,10 @@ Phase 4: Gameplay
 
 ### Components:
 - choppable
+- collision
 
 ### Systems:
+- collision
 - Chop Tree
 
 ### World:

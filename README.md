@@ -4,12 +4,10 @@ Built using ECS
 ## TO DO:
 ------
 Phase 3: visualization
-### Tilemap/Sprites:
-- Create grass tile
-- Entity player
-
 ### World:
-- Tilemap & Sprites
+- world size variable
+- generate a tilemap(just grass tiles for now)
+- render tilemap layer
 
 ### Camera:
 - map grid separate from rendering grid

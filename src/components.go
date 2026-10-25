@@ -2,6 +2,14 @@ package main
 
 // Components are the logical data used by entities for systems.
 // Components are not unique and could be universally used.
+// Components follow a strict naming convention:
+// c_id = the component type
+// m_id = the hashmap for entity compontent relationship lookup
+
+// Component - Glyph
+var m_Glyph = make(map[Entity]Glyph)
+func (e Entity) GetGlyph() Glyph { return m_Glyph[e] }
+func (e Entity) SetGlyph(glyph Glyph) { m_Glyph[e] = glyph }
 
 
 // Component - Name

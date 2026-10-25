@@ -2,17 +2,9 @@
 Built using ECS
 
 ## TO DO:
-Phase 2: visualization
-### kyanbasu:
-- draw border
-
-### Camera:
-- map grid separate from rendering grid
-- create it
-- it follows the player centered
 
 ------
-Phase 3: Polish
+Phase 2: Polish
 ### World:
 - Stores all entities, components, and systems
 - Rewrite rendering for world
@@ -28,6 +20,15 @@ Phase 3: Polish
 - fix the movement system
 - add gamestate control to the input
 
+------
+Phase 3: visualization
+### kyanbasu:
+- draw border
+
+### Camera:
+- map grid separate from rendering grid
+- create it
+- it follows the player centered
 
 ------
 Phase 4: Gameplay

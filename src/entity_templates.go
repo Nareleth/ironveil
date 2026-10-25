@@ -4,8 +4,8 @@ package main
 
 
 // Player
-func AddEntityPlayer(name string, sprite rune, x,y int) Entity {
-    e := AddEntity()
+func AddEntityPlayer(w *World, name string, sprite rune, x,y int) Entity {
+    e := AddEntity(w)
     e.SetName(name)
     e.SetSprite(sprite)
     e.SetPosition(x, y)

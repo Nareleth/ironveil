@@ -18,8 +18,12 @@ func main() {
     // Initialize screen rendering
     //screen := kyanbasu.NewScreen(t)
 
+
+    // Initialize the world
+    world := NewWorld()
+
     // Initialize Player
-    Player := AddEntityPlayer("Jeff", '@', 1, 1)
+    Player := AddEntityPlayer(world, "Jeff", '@', 1, 1)
 
 
     // Go routine read key input

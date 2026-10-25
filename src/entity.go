@@ -2,7 +2,7 @@ package main
 
 
 // An array to store all entities.
-var Entities []Entity
+//var Entities []Entity
 
 
 // An entity is an integer ID with a set of components.
@@ -13,10 +13,11 @@ type Entity uint64
 // Functions
 
 // Create a new Entity
-func AddEntity() Entity{
-    newID := len(Entities)
+func AddEntity(w *World) Entity{
+    newID := len(w.Entities)
     e := Entity(newID)
-    Entities = append(Entities, e)
+    //Entities = append(Entities, e)
+    w.Entities = append(w.Entities, e)
     return e
 }
 

@@ -1,7 +1,6 @@
 package main
 
 import (
-    "fmt"
     "time"
     "github.com/Nareleth/kyanbasu"
 )
@@ -16,18 +15,32 @@ func main() {
     t := kyanbasu.NewTerm()
     defer t.CloseTerm()
 
-    // Go routine read key input
-    go ReadInput(t)
+    // Initialize screen rendering
+    //screen := kyanbasu.NewScreen(t)
 
+    // Initialize Player
     Player := AddEntityPlayer("Jeff", '@', 1, 1)
-    PlayerPos := m_Position[Player]
 
-    fmt.Printf("Player: %s\nSprite: %c\nPos: (%d, %d)\n", Player.GetName(), Player.GetSprite(), PlayerPos.X, PlayerPos.Y)
-    fmt.Println("Number of Entities: ", len(Entities))
-    
+
+    // Go routine read key input
+    go ReadInput(t, Player)
+
 
     // Game Loop
     for {
+        t.Clear()
+
+        PlayerPos := m_Position[Player]
+        
+        // Systems
+        s_Movement(Player)
+
+        // Print HUD
+        t.Move(0,0)
+        t.WriteString("Pos: (%d,%d)", PlayerPos.X, PlayerPos.Y)
+
+        // Flush render instructions
+        t.Flush()
 
         // Frame limit
         time.Sleep(time.Second / time.Duration(FPS))

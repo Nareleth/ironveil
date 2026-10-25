@@ -2,24 +2,35 @@
 Built using ECS
 
 ## TO DO:
+Phase 2: visualization
+### kyanbasu:
+- draw border
+
+### Render:
+- Player sprite
+
 ------
-Phase 1:
-> Do I just make ECS an importable library with generic funcs?
-
-### Entity
-- Remove entity
-
+Phase 3: Polish
 ### World:
 - Stores all entities, components, and systems
 
 ### Components:
 - Playable?
 
-### System:
-- Movement
-
-### Game:
-- write that the position is changing
+### GameState:
+-  new gamestate
+- character control state (for input)
 
 ------
-Phase 2: visualization
+Phase 4: Gameplay
+### Entity:
+- trees
+
+### Components:
+- choppable
+
+### Systems:
+- Chop Tree
+
+### World:
+- Remove entity

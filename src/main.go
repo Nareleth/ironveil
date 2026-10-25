@@ -38,7 +38,7 @@ func main() {
         
         // Systems
         s_Movement(Player)
-        s_RenderEntities(t, Player)
+        s_RenderEntities(t, world)
 
         // Print HUD
         t.Move(0,0)

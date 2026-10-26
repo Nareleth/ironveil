@@ -32,11 +32,13 @@ func (e Entity) SetPosition(x,y int) {
 
 
 // Component - Sprite
+// Will remove but keeping for now. We render glyphs not sprites
+/*
 type c_Sprite rune
 var m_Sprites = make(map[Entity]c_Sprite)
 func (e Entity) GetSprite() rune { return rune(m_Sprites[e]) }
 func (e Entity) SetSprite(sprite rune) { m_Sprites[e] = c_Sprite(sprite) }
-
+*/
 
 // Component - Velocity
 type c_Velocity struct {

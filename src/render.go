@@ -15,8 +15,31 @@ type Glyph struct {
     BG      kyanbasu.Color
 }
 
+
+// Layer 1 - Render the tiles
+// More specifically this converts our map into a kyanbasu Cell to be handled natively with those rendering functions.
+func RenderTiles(s *kyanbasu.Screen, w *World) {
+    // Loop through the world tiles
+    for y := 0; y < w.Size; y++ {
+        for x := 0; x < w.Size; x++ {
+            // Initialize this specific tile
+            this_tile := w.Map[y][x]
+
+            // Convert this tile into a Cell for kyanbasu rendering
+            this_cell := kyanbasu.Cell{
+                Char:   this_tile.Glyph.Char,
+                FG:     this_tile.Glyph.FG,
+                BG:     this_tile.Glyph.BG,
+            }
+
+            s.SetCell(x, y, this_cell)
+        }
+    }
+}
+
+
 // Layer 2 - Render the Entities
-func s_RenderEntities(t *kyanbasu.Term, w *World) {
+func RenderEntities(t *kyanbasu.Term, w *World) {
     // Loop through all world entities
     for i := 0; i < len(w.Entities); i++ {
         // Extract entity information

@@ -5,10 +5,13 @@ import (
     "github.com/Nareleth/kyanbasu"
 )
 
-// Conf
+
+// Config
 const (
     FPS = 30
+    world_size = 20
 )
+
 
 func main() {
     // Initialize term controls
@@ -16,11 +19,12 @@ func main() {
     defer t.CloseTerm()
 
     // Initialize screen rendering
-    //screen := kyanbasu.NewScreen(t)
+    screen := kyanbasu.NewScreen(t)
 
 
     // Initialize the world
-    world := NewWorld()
+    world := NewWorld(world_size)
+    world.GenerateMap()
 
     // Initialize Player
     Player := AddEntityPlayer(world, "Jeff", '@', 1, 1)
@@ -38,14 +42,17 @@ func main() {
         
         // Systems
         s_Movement(Player)
-        s_RenderEntities(t, world)
+
+        // Render Layers
+        RenderTiles(screen, world)
+        RenderEntities(t, world)
 
         // Print HUD
         t.Move(0,0)
         t.WriteString("Pos: (%d,%d)", PlayerPos.X, PlayerPos.Y)
 
         // Flush render instructions
-        t.Flush()
+        screen.Flush()
 
         // Frame limit
         time.Sleep(time.Second / time.Duration(FPS))

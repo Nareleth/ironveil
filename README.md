@@ -5,9 +5,8 @@ Built using ECS
 ------
 Phase 3: visualization
 ### World:
-- world size variable
-- generate a tilemap(just grass tiles for now)
-- render tilemap layer
+- render tilemap layer - dont know why its not working
+- additionally, clean up the existing render layer 2 into using screen rather than t
 
 ### Camera:
 - map grid separate from rendering grid

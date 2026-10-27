@@ -39,7 +39,7 @@ func RenderTiles(s *kyanbasu.Screen, w *World) {
 
 
 // Layer 2 - Render the Entities
-func RenderEntities(t *kyanbasu.Term, w *World) {
+func RenderEntities(s *kyanbasu.Screen, w *World) {
     // Loop through all world entities
     for i := 0; i < len(w.Entities); i++ {
         // Extract entity information
@@ -47,10 +47,15 @@ func RenderEntities(t *kyanbasu.Term, w *World) {
         Pos := m_Position[e]
         glyph := e.GetGlyph()
 
+        // Convert this entity glyph into a Cell for kyanbasu rendering
+        this_cell := kyanbasu.Cell{
+            Char:   glyph.Char,
+            FG:     glyph.FG,
+            BG:     glyph.BG,
+        }
+
         // Use terminal methods to render
-        t.Move(Pos.X, Pos.Y)
-        t.SetColor(glyph.FG)
-        t.WriteRune(glyph.Char)
-        t.SetColor(kyanbasu.Color_Reset)
+        s.SetCell(Pos.X, Pos.Y, this_cell)
     }
 }
+

@@ -4,14 +4,13 @@ Built using ECS
 ## TO DO:
 ------
 Phase 3: visualization
-### World:
-- render tilemap layer - dont know why its not working
-- additionally, clean up the existing render layer 2 into using screen rather than t
-
 ### Camera:
 - map grid separate from rendering grid
 - create it
 - it follows the player centered
+
+### Bugfix:
+- Clamp printing within boundaries
 
 ### Tilemap/Sprites:
 - make a JSON file

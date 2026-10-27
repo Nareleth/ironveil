@@ -36,8 +36,6 @@ func main() {
 
     // Game Loop
     for {
-        t.Clear()
-
         PlayerPos := m_Position[Player]
         
         // Systems
@@ -45,7 +43,7 @@ func main() {
 
         // Render Layers
         RenderTiles(screen, world)
-        RenderEntities(t, world)
+        RenderEntities(screen, world)
 
         // Print HUD
         t.Move(0,0)

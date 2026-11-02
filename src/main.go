@@ -9,7 +9,7 @@ import (
 // Config
 const (
     FPS = 30
-    world_size = 20
+    world_size = 200
 )
 
 

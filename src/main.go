@@ -30,7 +30,7 @@ func main() {
     camera := NewCamera(t)
 
     // Initialize Player
-    Player := AddEntityPlayer(world, "Jeff", '@', 1, 1)
+    Player := AddEntityPlayer(world, "Jeff", '@', 1, 1, camera)
 
 
     // Go routine read key input

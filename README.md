@@ -5,8 +5,6 @@ Built using ECS
 ------
 Phase 3: visualization
 ### Camera:
-- map grid separate from rendering grid
-- create it
 - it follows the player centered
 
 ### Bugfix:

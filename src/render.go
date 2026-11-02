@@ -35,8 +35,8 @@ func RenderTiles(s *kyanbasu.Screen, w *World, c *Camera) {
             this_tile := w.Map[y][x]
 
             // Viewport clamping
-            renderX := c.Clamp(x)
-            renderY := c.Clamp(y)
+            renderX := c.Clamp(x, c.ViewportX, c.ViewportW)
+            renderY := c.Clamp(y, c.ViewportY, c.ViewportH)
             if !renderX || !renderY { continue }
             
             // Convert this tile into a Cell for kyanbasu rendering
@@ -63,8 +63,8 @@ func RenderEntities(s *kyanbasu.Screen, w *World, c *Camera) {
         glyph := e.GetGlyph()
 
         // Viewport clamping
-        renderX := c.Clamp(Pos.X)
-        renderY := c.Clamp(Pos.Y)
+        renderX := c.Clamp(Pos.X, c.ViewportX, c.ViewportW)
+        renderY := c.Clamp(Pos.Y, c.ViewportY, c.ViewportH)
         if !renderX || !renderY { continue }
 
         // Convert this entity glyph into a Cell for kyanbasu rendering

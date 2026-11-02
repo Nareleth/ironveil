@@ -4,12 +4,13 @@ package main
 
 
 // Player
-func AddEntityPlayer(w *World, name string, sprite rune, x,y int) Entity {
+func AddEntityPlayer(w *World, name string, sprite rune, x,y int, camera *Camera) Entity {
     e := AddEntity(w)
     e.SetName(name)
     e.SetGlyph(glyph_e_player)
     e.SetPosition(x, y)
     e.SetVelocity(0, 0)
+    e.SetCamera(camera)
 
     return e
 }

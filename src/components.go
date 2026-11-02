@@ -6,6 +6,17 @@ package main
 // c_id = the component type
 // m_id = the hashmap for entity compontent relationship lookup
 
+
+// Component - Camera
+var m_Camera = make(map[Entity]*Camera)
+func (e Entity) SetCamera(camera *Camera) { m_Camera[e] = camera }
+/*
+func (e Entity) MoveCamera(dx, dy int) { 
+    m_Camera[e].ViewportX = m_Camera[e].ViewportX + dx
+    m_Camera[e].ViewportY = m_Camera[e].ViewportY + dy
+}
+*/
+
 // Component - Glyph
 var m_Glyph = make(map[Entity]Glyph)
 func (e Entity) GetGlyph() Glyph { return m_Glyph[e] }

@@ -26,12 +26,16 @@ func ReadInput(t *kyanbasu.Term, Player Entity) {
             // Movement
             case kyanbasu.Key_w:
                 Player.SetVelocity(0, -1)
+                //Player.MoveCamera(0, -1)
             case kyanbasu.Key_a:
-                Player.SetVelocity(-1, 0)
+                Player.SetVelocity(-1,  0)
+                //Player.MoveCamera(-1, 0)
             case kyanbasu.Key_s:
                 Player.SetVelocity(0, 1)
+                //Player.MoveCamera(0, 1)
             case kyanbasu.Key_d:
                 Player.SetVelocity(1, 0)
+                //Player.MoveCamera(1, 0)
         }
     }
 }

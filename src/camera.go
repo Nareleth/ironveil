@@ -23,3 +23,15 @@ func NewCamera(term *kyanbasu.Term) *Camera {
         ViewportH: h,
     }
 }
+
+
+// Clamping is used to constraint an object within the viewport of the camera
+// It takes input of a value and compares against the camera range
+// If the value is not within the range, a false is returned
+func (c *Camera) Clamp(value int) bool {
+    if value < c.ViewportX || value >= c.ViewportW || value < c.ViewportY || value >= c.ViewportH {
+        return false
+    }
+
+    return true
+}

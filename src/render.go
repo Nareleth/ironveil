@@ -27,7 +27,7 @@ func Clamp(value, min, max int) bool {
 
 // Layer 1 - Render the tiles
 // More specifically this converts our map into a kyanbasu Cell to be handled natively with those rendering functions.
-func RenderTiles(s *kyanbasu.Screen, w *World) {
+func RenderTiles(s *kyanbasu.Screen, w *World, c *Camera) {
     // Loop through the world tiles
     for y := 0; y < w.Size; y++ {
         for x := 0; x < w.Size; x++ {
@@ -35,17 +35,9 @@ func RenderTiles(s *kyanbasu.Screen, w *World) {
             this_tile := w.Map[y][x]
 
             // Viewport clamping
-            // THIS WILL BE CONTROLLED BY A CAMERA
-            viewportX := 0
-            viewportY := 0
-            viewportW := 140
-            viewportH := 83
-
-            renderX := Clamp(x, viewportX, viewportW)
-            renderY := Clamp(y, viewportY, viewportH)
-
+            renderX := c.Clamp(x)
+            renderY := c.Clamp(y)
             if !renderX || !renderY { continue }
-
             
             // Convert this tile into a Cell for kyanbasu rendering
             this_cell := kyanbasu.Cell{
@@ -62,7 +54,7 @@ func RenderTiles(s *kyanbasu.Screen, w *World) {
 
 
 // Layer 2 - Render the Entities
-func RenderEntities(s *kyanbasu.Screen, w *World) {
+func RenderEntities(s *kyanbasu.Screen, w *World, c *Camera) {
     // Loop through all world entities
     for i := 0; i < len(w.Entities); i++ {
         // Extract entity information
@@ -70,17 +62,9 @@ func RenderEntities(s *kyanbasu.Screen, w *World) {
         Pos := m_Position[e]
         glyph := e.GetGlyph()
 
-
         // Viewport clamping
-        // THIS WILL BE CONTROLLED BY A CAMERA
-        viewportX := 0
-        viewportY := 0
-        viewportW := w.Size
-        viewportH := w.Size
-
-        renderX := Clamp(Pos.X, viewportX, viewportW)
-        renderY := Clamp(Pos.Y, viewportY, viewportH)
-
+        renderX := c.Clamp(Pos.X)
+        renderY := c.Clamp(Pos.Y)
         if !renderX || !renderY { continue }
 
         // Convert this entity glyph into a Cell for kyanbasu rendering

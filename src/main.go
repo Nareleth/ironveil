@@ -26,6 +26,9 @@ func main() {
     world := NewWorld(world_size)
     world.GenerateMap()
 
+    // Initialize the viewport
+    camera := NewCamera(t)
+
     // Initialize Player
     Player := AddEntityPlayer(world, "Jeff", '@', 1, 1)
 
@@ -42,8 +45,8 @@ func main() {
         s_Movement(Player)
 
         // Render Layers
-        RenderTiles(screen, world)
-        RenderEntities(screen, world)
+        RenderTiles(screen, world, camera)
+        RenderEntities(screen, world, camera)
 
         // Print HUD
         t.Move(0,0)

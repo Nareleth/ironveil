@@ -8,8 +8,9 @@ import (
 
 // Config
 const (
-    FPS = 30
-    world_size = 200
+    FPS         = 30
+    world_size  = 200
+    seed uint64 = 12345
 )
 
 

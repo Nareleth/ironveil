@@ -12,6 +12,7 @@ import (
 )
 
 var (
-    glyph_e_player = Glyph{ Char: '@', FG: kyanbasu.Color_Blue, BG: kyanbasu.Color_Reset, }
-    glyph_e_grass = Glyph{ Char: '~', FG: kyanbasu.Color_Green, BG: kyanbasu.Color_Reset, }
+    glyph_e_player  = Glyph{ Char: '@', FG: kyanbasu.Color_Blue,    BG: kyanbasu.Color_Reset, }
+    glyph_e_grass   = Glyph{ Char: '~', FG: kyanbasu.Color_Green,   BG: kyanbasu.Color_Reset, }
+    glyph_e_tree    = Glyph{ Char: 't', FG: kyanbasu.Color_Green,   BG: kyanbasu.Color_Reset, }
 )

@@ -18,6 +18,7 @@ Phase 3: visualization
 Phase 4: Labor and Hunting
 ### Entity:
 - trees
+    - create entity and wrap the tile around the entity to spawn it
 - squirrel
 
 ### Components:

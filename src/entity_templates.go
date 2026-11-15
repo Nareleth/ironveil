@@ -14,3 +14,13 @@ func AddEntityPlayer(w *World, name string, sprite rune, x,y int, camera *Camera
 
     return e
 }
+
+
+// Tree
+func AddEntityTree(w *World, x,y int) Entity {
+    e := AddEntity(w)
+    e.SetGlyph(glyph_e_tree)
+    e.SetPosition(x, y)
+
+    return e
+}

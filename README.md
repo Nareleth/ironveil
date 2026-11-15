@@ -18,13 +18,18 @@ Phase 3: visualization
 Phase 4: Labor and Hunting
 ### Entity:
 - trees
-    - create entity and wrap the tile around the entity to spawn it
+    - add collision
+    - add choppable
+    - add hp
 - squirrel
+    - AddEntitySquirrel
+    - Add States: idle
 
 ### Components:
 - choppable
 - collision
 - hp
+- state (idle)
 
 ### Systems:
 - collision

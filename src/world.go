@@ -25,7 +25,6 @@ type Tile struct {
 // Create static tiles mapped to glyphs
 var (
     tile_grass  = Tile{ Glyph: glyph_e_grass }
-    tile_tree   = Tile{ Glyph: glyph_e_tree }
 )
 
 // Initialize a new world
@@ -58,7 +57,8 @@ func (w *World) GenerateMap() {
 
             switch {
             case randTile < 5:
-                w.Map[y][x] = tile_tree
+                this_tree := AddEntityTree(w, x, y)
+                w.Map[y][x] = Tile{ Glyph: this_tree.GetGlyph() }
             default:
                 w.Map[y][x] = tile_grass
             }

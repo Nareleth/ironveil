@@ -4,9 +4,11 @@ package main
 
 
 // Collision
-func Collided(w *World, e Entity, ex, ey, vx, vy int) bool {
+// Wraps around a "get entity at" function to determine if the delta movement of an entity reaches a collidable target
+// Then returns the value if a collision happens and allows the movement system to determine movement blockage.
+func Collided(w *World, x, y int) bool {
     // Detect if a colliding entity exists in target tile
-    target, collided := w.GetEntityAt(vx, vy)            
+    target, collided := w.GetEntityAt(x, y)            
 
     if collided {
         if target.GetCollidable() == true {
@@ -35,7 +37,7 @@ func s_Movement(w *World, e Entity) {
     vy := ey + dy
 
     // Detect collision
-    if Collided(w, e, ex, ey, vx, vy) {
+    if Collided(w, vx, vy) {
         // Stop movement
         e.SetPosition(ex, ey)
         e.SetVelocity(0, 0)

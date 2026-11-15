@@ -21,6 +21,7 @@ func AddEntityTree(w *World, x,y int) Entity {
     e := AddEntity(w)
     e.SetGlyph(glyph_e_tree)
     e.SetPosition(x, y)
+    e.SetCollidable(true)
 
     return e
 }

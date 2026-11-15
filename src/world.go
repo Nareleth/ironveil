@@ -37,6 +37,23 @@ func NewWorld(size int) *World {
 
 
 // Methods
+
+// Get Entity from a coordinate
+func (w *World) GetEntityAt(x, y int) (Entity, bool) {
+    // Loop through the position hashmap
+    for e, pos := range m_Position {
+        // Check if given coordinates match an entity
+        if x == pos.X && y == pos.Y {
+            // Return entity and true
+            return e, true
+        }
+    }
+
+    // Return else
+    return 0, false
+}
+
+
 // Generate the world map
 func (w *World) GenerateMap() {
     // Initialize seed rng

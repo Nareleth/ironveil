@@ -2,6 +2,7 @@ package main
 
 // Components are the logical data used by entities for systems.
 // Components are not unique and could be universally used.
+// Many components are built around a component type variable, and functions to get and set the value of the component.
 // Components follow a strict naming convention:
 // c_id = the component type
 // m_id = the hashmap for entity compontent relationship lookup
@@ -16,6 +17,14 @@ func (e Entity) MoveCamera(dx, dy int) {
     m_Camera[e].ViewportY = m_Camera[e].ViewportY + dy
 }
 */
+
+
+// Component - Collidable
+type c_Collidable bool
+var m_Collidable = make(map[Entity]c_Collidable)
+func (e Entity) GetCollidable() bool { return bool(m_Collidable[e]) }
+func (e Entity) SetCollidable(collidable bool) { m_Collidable[e] = c_Collidable(collidable) }
+
 
 // Component - Glyph
 var m_Glyph = make(map[Entity]Glyph)
@@ -51,12 +60,13 @@ func (e Entity) GetSprite() rune { return rune(m_Sprites[e]) }
 func (e Entity) SetSprite(sprite rune) { m_Sprites[e] = c_Sprite(sprite) }
 */
 
+
 // Component - Velocity
 type c_Velocity struct {
     dx, dy int
 }
 var m_Velocity = make(map[Entity]c_Velocity)
-
+func (e Entity) GetVelocity() (int, int) { return m_Velocity[e].dx, m_Velocity[e].dy}
 func (e Entity) SetVelocity(x,y int) {
     m_Velocity[e] = c_Velocity{ dx: x, dy: y }
 }

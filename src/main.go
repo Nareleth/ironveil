@@ -43,7 +43,7 @@ func main() {
         PlayerPos := m_Position[Player]
         
         // Systems
-        s_Movement(Player)
+        s_Movement(world, Player)
 
         // Render Layers
         RenderTiles(screen, world, camera)

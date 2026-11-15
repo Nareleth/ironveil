@@ -18,7 +18,6 @@ Phase 3: visualization
 Phase 4: Labor and Hunting
 ### Entity:
 - trees
-    - add collision
     - add choppable
     - add hp
 - squirrel
@@ -27,7 +26,6 @@ Phase 4: Labor and Hunting
 
 ### Components:
 - choppable
-- collision
 - hp
 - state (idle)
 

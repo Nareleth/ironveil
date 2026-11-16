@@ -10,6 +10,7 @@ func AddEntityPlayer(w *World, name string, sprite rune, x,y int, camera *Camera
     e.SetGlyph(glyph_e_player)
     e.SetPosition(x, y)
     e.SetVelocity(0, 0)
+    e.SetState(state_Idle)
     e.SetCamera(camera)
 
     return e
@@ -22,6 +23,7 @@ func AddEntityTree(w *World, x,y int) Entity {
     e.SetGlyph(glyph_e_tree)
     e.SetPosition(x, y)
     e.SetCollidable(true)
+    e.SetChoppable(true)
 
     return e
 }

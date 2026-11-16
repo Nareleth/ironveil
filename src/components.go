@@ -19,6 +19,13 @@ func (e Entity) MoveCamera(dx, dy int) {
 */
 
 
+// Component - Choppable
+type c_Choppable bool
+var m_Choppable = make(map[Entity]c_Choppable)
+func (e Entity) GetChoppable() bool { return bool(m_Choppable[e]) }
+func (e Entity) SetChoppable(choppable bool) { m_Choppable[e] = c_Choppable(choppable) }
+
+
 // Component - Collidable
 type c_Collidable bool
 var m_Collidable = make(map[Entity]c_Collidable)
@@ -51,14 +58,16 @@ func (e Entity) SetPosition(x,y int) {
 }
 
 
-// Component - Sprite
-// Will remove but keeping for now. We render glyphs not sprites
-/*
-type c_Sprite rune
-var m_Sprites = make(map[Entity]c_Sprite)
-func (e Entity) GetSprite() rune { return rune(m_Sprites[e]) }
-func (e Entity) SetSprite(sprite rune) { m_Sprites[e] = c_Sprite(sprite) }
-*/
+// Component - State
+// The current action or mode of an entity
+type c_State string
+const (
+    state_Idle c_State = "Idle"
+    state_Chop c_State = "Chopping"
+)
+var m_State = make(map[Entity]c_State)
+func (e Entity) GetState() c_State { return c_State(m_State[e]) }
+func (e Entity) SetState(state c_State) { m_State[e] = c_State(state) }
 
 
 // Component - Velocity

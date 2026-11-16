@@ -84,3 +84,4 @@ func (w *World) GenerateMap() {
         }
     }
 }
+

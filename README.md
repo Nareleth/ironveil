@@ -2,6 +2,10 @@
 Built using ECS
 
 ## TO DO:
+Phase 4:
+- add input for chopping adjacent tree
+- Create chop tree system
+- remove entity method
 ------
 Phase 3: visualization
 ### Camera:
@@ -16,10 +20,10 @@ Phase 3: visualization
 
 ------
 Phase 4: Labor and Hunting
+### Input:
+- chop adjacent tree
+
 ### Entity:
-- trees
-    - add choppable
-    - add hp
 - squirrel
     - AddEntitySquirrel
     - Add States: idle
@@ -27,10 +31,8 @@ Phase 4: Labor and Hunting
 ### Components:
 - choppable
 - hp
-- state (idle)
 
 ### Systems:
-- collision
 - Chop Tree
 - idle wandering
 - melee
@@ -52,6 +54,11 @@ Phase 5: HUD
 ### HUD:
 - Player name
 - Stats
+- Actions
+- Event log
+
+### Event log:
+- make it
 
 ### Systems:
 - Experience Gain

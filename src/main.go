@@ -40,7 +40,9 @@ func main() {
 
     // Game Loop
     for {
-        PlayerPos := m_Position[Player]
+        // Temp just for UI
+        PlayerPos   := m_Position[Player]
+        PlayerState := m_State[Player]
         
         // Systems
         s_Movement(world, Player)
@@ -52,6 +54,7 @@ func main() {
         // Print HUD
         t.Move(0,0)
         t.WriteString("Pos: (%d,%d)", PlayerPos.X, PlayerPos.Y)
+        t.WriteString("State: %s", PlayerState)
 
         // Flush render instructions
         screen.Flush()

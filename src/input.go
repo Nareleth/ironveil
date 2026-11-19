@@ -25,8 +25,12 @@ const (
 
 // Bindable hotkeys
 // Later convert to reading from conf file
-var keybinds = map[kyanbasu.Key]Command {
-    kyanbasu.Key_c: cmd_move_down,
+var keybinds = map[Command]kyanbasu.Key {
+    cmd_state_quit: kyanbasu.Key_q,
+    cmd_move_up:    kyanbasu.Key_w,
+    cmd_move_down:  kyanbasu.Key_s,
+    cmd_move_left:  kyanbasu.Key_a,
+    cmd_move_right: kyanbasu.Key_d,
 }
 
 
@@ -36,31 +40,30 @@ func ReadInput(t *kyanbasu.Term, queue chan Command) {
         // Read key input
         key := t.ReadKey()
 
-
         // Parse key input
         switch(key) {
             //State
             // Close Game
-            case kyanbasu.Key_q, kyanbasu.Key_Q:
+            case keybinds[cmd_state_quit]:
                 queue <- cmd_state_quit
 
             // Movement
-            case kyanbasu.Key_w:
+            // Up
+            case keybinds[cmd_move_up]:
                 queue <- cmd_move_up
 
-            case kyanbasu.Key_a:
+            // Down
+            case keybinds[cmd_move_down]:
+                queue <- cmd_move_down
+
+            // Left
+            case keybinds[cmd_move_left]:
                 queue <- cmd_move_left
 
-            case kyanbasu.Key_s:
-                queue <- cmd_move_down
-
-            case kyanbasu.Key_d:
+            // Right
+            case keybinds[cmd_move_right]:
                 queue <- cmd_move_right
             
-
-            // Commands
-            case kyanbasu.Key_c:
-                queue <- cmd_move_down
         }
     }
 }

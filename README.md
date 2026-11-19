@@ -95,10 +95,5 @@ Phase Z: Polish
 - Playable?
 
 ### GameState:
--  new gamestate
 - character control state (for input)
-
-### Movement:
-- fix the movement system
-- add gamestate control to the input
 

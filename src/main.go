@@ -34,16 +34,22 @@ func main() {
     Player := AddEntityPlayer(world, "Jeff", '@', 1, 1, camera)
 
 
-    // Go routine read key input
-    go ReadInput(t, Player)
 
+    // Create a channel to hold 16 commands before flushing
+    command_queue := make(chan Command, 16)
+
+    // Go routine read key input
+    go ReadInput(t, command_queue)
+
+    // Handle input
+    go CommandQueue(t, command_queue, Player)
 
     // Game Loop
     for {
         // Temp just for UI
         PlayerPos   := m_Position[Player]
         PlayerState := m_State[Player]
-        
+
         // Systems
         s_Movement(world, Player)
 

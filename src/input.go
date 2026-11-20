@@ -16,6 +16,7 @@ type Command int
 const (
     cmd_none Command = iota
     cmd_state_quit
+    cmd_state_debug
     cmd_move_up
     cmd_move_down
     cmd_move_left
@@ -26,11 +27,12 @@ const (
 // Bindable hotkeys
 // Later convert to reading from conf file
 var keybinds = map[Command]kyanbasu.Key {
-    cmd_state_quit: kyanbasu.Key_q,
-    cmd_move_up:    kyanbasu.Key_w,
-    cmd_move_down:  kyanbasu.Key_s,
-    cmd_move_left:  kyanbasu.Key_a,
-    cmd_move_right: kyanbasu.Key_d,
+    cmd_state_quit:     kyanbasu.Key_q,
+    cmd_state_debug:    kyanbasu.Key_Tilde,
+    cmd_move_up:        kyanbasu.Key_w,
+    cmd_move_down:      kyanbasu.Key_s,
+    cmd_move_left:      kyanbasu.Key_a,
+    cmd_move_right:     kyanbasu.Key_d,
 }
 
 
@@ -46,6 +48,10 @@ func ReadInput(t *kyanbasu.Term, queue chan Command) {
             // Close Game
             case keybinds[cmd_state_quit]:
                 queue <- cmd_state_quit
+
+            // Toggle Debug Mode
+            case keybinds[cmd_state_debug]:
+                queue <- cmd_state_debug
 
             // Movement
             // Up
@@ -78,6 +84,13 @@ func CommandQueue(t *kyanbasu.Term, queue chan Command, Player Entity) {
             case cmd_state_quit:
                 t.CloseTerm()
                 os.Exit(0)
+
+            case cmd_state_debug:
+                if Debug == true {
+                    Debug = false
+                } else  {
+                    Debug = true
+                }
 
             // Movement
             case cmd_move_up:

@@ -1,9 +1,7 @@
-github.com/Nareleth/kyanbasu v0.0.0-20261022014720-96bd9254fb56 h1:LnbayuUKKBqlBR3sKq2sAOVoxAPr1SseQXWwfm++0eU=
-github.com/Nareleth/kyanbasu v0.0.0-20261022014720-96bd9254fb56/go.mod h1:XYDKQcvJw5tsbQuqm7y356ktqEo1WR2Ajdmd6huEBbM=
-github.com/Nareleth/kyanbasu v0.0.0-20261119030500-af77cc3c8148 h1:VFh2IIgUTLFabRYhVH2IT5hlyaTU/QbZ+SVOCVHnByU=
-github.com/Nareleth/kyanbasu v0.0.0-20261119030500-af77cc3c8148/go.mod h1:XYDKQcvJw5tsbQuqm7y356ktqEo1WR2Ajdmd6huEBbM=
-github.com/Nareleth/kyanbasu v0.0.0-20261119031420-eed7a7732407 h1:7cgwVGDPupgqGQMAk3MA2j3ufoZThaDDWOslJB4WRx4=
-github.com/Nareleth/kyanbasu v0.0.0-20261119031420-eed7a7732407/go.mod h1:XYDKQcvJw5tsbQuqm7y356ktqEo1WR2Ajdmd6huEBbM=
+github.com/Nareleth/kyanbasu v0.0.0-20261120043759-55f7a3cec0c6 h1:Qk/pSd+0cn9qG+Hq70fUONo9X4WCDDZOGq/0D7AKa0Y=
+github.com/Nareleth/kyanbasu v0.0.0-20261120043759-55f7a3cec0c6/go.mod h1:XYDKQcvJw5tsbQuqm7y356ktqEo1WR2Ajdmd6huEBbM=
+github.com/Nareleth/kyanbasu v0.0.0-20261120044555-43a531bdd399 h1:8qrnlDw2oynXvEOItjX/hc0pn7OUc51YKHtcwZOx0DQ=
+github.com/Nareleth/kyanbasu v0.0.0-20261120044555-43a531bdd399/go.mod h1:XYDKQcvJw5tsbQuqm7y356ktqEo1WR2Ajdmd6huEBbM=
 golang.org/x/sys v0.48.0 h1:bbX/i/6MgT9BVLM9RT1thmxL04yeTAhbEz4SyadbXoo=
 golang.org/x/sys v0.48.0/go.mod h1:hNLxWAXmnKAxqDtdwIYC4bM9oQPEecfsnNMuSxOs3og=
 golang.org/x/term v0.46.0 h1:3+OXuTbaKDgwk8jTi3aSLHRlmWqHEUDUtxnbFigO4YE=

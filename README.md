@@ -5,8 +5,9 @@ Life sim
 
 ## TO DO:
 Phase Z2:
-### canvas:
-- need to have widgets for game area, log, and hud
+### Debug:
+- also add run flag param to run game in debug mode
+- bugfix why even when disabled the window still appears
 
 ### logs:
 - create the slice for holding logs
@@ -17,6 +18,9 @@ Phase Z2:
 - show player name
 - some hotkey help
 - expand a window to show all hotkeys and help
+
+### canvas:
+- redraw the game tiles + entities inside it
 
 ------
 Phase Z3:
@@ -149,6 +153,7 @@ Phase Z: Polish
 - sprite + tilemap file
 - setting conf file
 - keybinds file
+- default debug mode is hidden 
 
 
 ## Other things
